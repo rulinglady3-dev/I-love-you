@@ -1,152 +1,248 @@
-* {
-    box-sizing: border-box;
+*{
+    box-sizing:border-box;
 }
 
 
-body {
+body{
 
-    margin: 0;
-    height: 100vh;
+    margin:0;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height:100vh;
 
-    overflow: hidden;
+    display:flex;
 
-    background-image: url("IMG_5313.webp");
-    background-size: cover;
-    background-position: center;
+    justify-content:center;
 
-    font-family: "Georgia", serif;
+    align-items:center;
 
-}
+    overflow:hidden;
 
+    background-image:url("IMG_5313.webp");
 
+    background-size:cover;
 
-.container {
+    background-position:center;
 
-    text-align: center;
-
-    color: white;
+    font-family:Georgia, serif;
 
 }
 
 
 
-.envelope {
+.container{
 
-    width: 230px;
+    text-align:center;
 
-    cursor: pointer;
-
-    transition: transform .4s ease;
+    color:white;
 
 }
 
 
 
-.envelope:hover {
+.hidden{
 
-    transform: scale(1.05);
-
-}
-
-
-
-.sorry-text {
-
-    font-size: 28px;
-
-    margin-top: 20px;
-
-    color: white;
+    display:none;
 
 }
 
 
 
-.letter {
+/* Zarf */
 
-    background: #fff8e7;
+#envelope{
 
-    color: #333;
+    width:230px;
 
-    width: 300px;
+    cursor:pointer;
 
-    padding: 30px;
+    transition:.4s;
 
-    border-radius: 15px;
+}
 
-    cursor: pointer;
 
-    font-size: 22px;
+#envelope:hover{
 
-    animation: appear .8s ease;
+    transform:scale(1.08);
 
 }
 
 
 
-.letter span {
+#sorry{
 
-    display: block;
-
-    margin-top: 20px;
-
-    font-size: 18px;
-
-    color: #777;
+    font-size:30px;
 
 }
 
 
 
-.gifs img {
+/* Mektup */
 
-    width: 300px;
+.paper{
 
-    max-width: 80vw;
+    background:#fff8e7;
 
-    border-radius: 20px;
+    color:#333;
 
-}
+    width:320px;
 
+    padding:35px;
 
+    border-radius:15px;
 
-.miss {
+    font-size:22px;
 
-    margin-top: 25px;
+    cursor:pointer;
 
-    font-size: 35px;
-
-}
-
-
-
-.hidden {
-
-    display: none;
+    animation:show .8s;
 
 }
 
 
 
-@keyframes appear {
+.paper span{
 
-    from {
+    display:block;
 
-        opacity: 0;
+    margin-top:20px;
 
-        transform: translateY(20px);
+    font-size:18px;
+
+}
+
+
+
+/* Gif */
+
+#gif{
+
+    width:300px;
+
+    max-width:80vw;
+
+    border-radius:20px;
+
+}
+
+
+
+/* Yazılar */
+
+h1{
+
+    animation:show 1s;
+
+}
+
+
+
+/* Hareketli butonlar */
+
+.moving{
+
+    position:absolute;
+
+    padding:15px 25px;
+
+    border:none;
+
+    border-radius:30px;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    background:#ff5c8a;
+
+    color:white;
+
+}
+
+
+
+.yes1{
+
+    left:30%;
+
+    top:60%;
+
+}
+
+
+.yes2{
+
+    left:55%;
+
+    top:40%;
+
+}
+
+
+.yes3{
+
+    left:40%;
+
+    top:75%;
+
+}
+
+
+
+#catYes,
+#catNo{
+
+    padding:15px 35px;
+
+    border:none;
+
+    border-radius:30px;
+
+    font-size:22px;
+
+    margin:20px;
+
+    cursor:pointer;
+
+}
+
+
+
+#catYes{
+
+    background:#ff5c8a;
+
+    color:white;
+
+}
+
+
+
+#catNo{
+
+    background:#555;
+
+    color:white;
+
+}
+
+
+
+@keyframes show{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
 
     }
 
-    to {
 
-        opacity: 1;
+    to{
 
-        transform: translateY(0);
+        opacity:1;
+
+        transform:translateY(0);
 
     }
 
