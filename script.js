@@ -1,44 +1,55 @@
 const envelope = document.getElementById("envelope");
+const sorry = document.getElementById("sorry");
+
 const letter = document.getElementById("letter");
 
-const gifs = document.getElementById("gifs");
-const gifImage = document.getElementById("gifImage");
+const gifBox = document.getElementById("gifBox");
+const gif = document.getElementById("gif");
 
 const miss = document.getElementById("miss");
 
+const okayBox = document.getElementById("okayBox");
 
-let clickCount = 0;
+const catBox = document.getElementById("catBox");
+
+const catYes = document.getElementById("catYes");
+const catNo = document.getElementById("catNo");
 
 
 
-const gifList = [
+let envelopeClick = 0;
 
-    "IMG_5300.gif",
-    "IMG_5306.gif",
-    "IMG_5307.gif",
-    "IMG_5308.gif",
-    "IMG_5309.gif",
-    "IMG_5310.gif",
-    "IMG_5311.gif"
 
+
+// GIF listesi
+
+const gifs = [
+"IMG_5300.gif",
+"IMG_5306.gif",
+"IMG_5307.gif",
+"IMG_5308.gif",
+"IMG_5309.gif",
+"IMG_5310.gif",
+"IMG_5311.gif"
 ];
 
 
-let currentGif = 0;
+let gifIndex = 0;
 
 
 
-envelope.addEventListener("click", ()=>{
+// Zarfa tıklama
+
+envelope.addEventListener("click",()=>{
 
 
-    clickCount++;
+    envelopeClick++;
 
 
+    if(envelopeClick === 1){
 
-    if(clickCount === 1){
 
-
-        // İlk tıklamada mektup açılır
+        sorry.style.display="none";
 
         letter.classList.remove("hidden");
 
@@ -46,22 +57,119 @@ envelope.addEventListener("click", ()=>{
     }
 
 
+    else if(envelopeClick === 2){
 
-    else if(clickCount === 2){
-
-
-        // İkinci tıklamada GIF'ler başlar
 
         letter.classList.add("hidden");
 
-        gifs.classList.remove("hidden");
+        gifBox.classList.remove("hidden");
 
-
-        showNextGif();
+        playGif();
 
 
     }
 
+
+});
+
+
+
+
+// GIF oynatma
+
+function playGif(){
+
+
+    if(gifIndex < gifs.length){
+
+
+        gif.src = gifs[gifIndex];
+
+        gifIndex++;
+
+
+        setTimeout(playGif,2500);
+
+
+    }
+
+    else{
+
+
+        gifBox.classList.add("hidden");
+
+
+        miss.classList.remove("hidden");
+
+
+        setTimeout(()=>{
+
+
+            miss.classList.add("hidden");
+
+            okayBox.classList.remove("hidden");
+
+            moveButtons();
+
+
+        },2500);
+
+
+    }
+
+
+}
+
+
+
+// 3 hareketli buton
+
+function moveButtons(){
+
+
+    const buttons=document.querySelectorAll(".moving");
+
+
+    buttons.forEach(btn=>{
+
+
+        setInterval(()=>{
+
+
+            btn.style.left=Math.random()*70+"%";
+
+            btn.style.top=Math.random()*70+"%";
+
+
+        },1500);
+
+
+
+    });
+
+
+
+}
+
+
+
+
+// Kedi bölümü için
+
+// Şimdilik Yes butonuna basınca gösterir
+
+document.querySelectorAll(".moving").forEach(btn=>{
+
+
+    btn.addEventListener("click",()=>{
+
+
+        okayBox.classList.add("hidden");
+
+        catBox.classList.remove("hidden");
+
+
+    });
 
 
 });
@@ -70,33 +178,44 @@ envelope.addEventListener("click", ()=>{
 
 
 
-function showNextGif(){
+// No küçülür Yes büyür
 
 
-    if(currentGif < gifList.length){
+let yesSize=1;
+
+let noSize=1;
 
 
-        gifImage.src = gifList[currentGif];
+
+catNo.addEventListener("click",()=>{
 
 
-        currentGif++;
+    noSize-=0.15;
 
 
-        setTimeout(showNextGif, 2500);
+    if(noSize<0.2){
 
-
-    }
-
-    else {
-
-
-        gifs.classList.add("hidden");
-
-
-        miss.classList.remove("hidden");
-
+        noSize=0.2;
 
     }
 
 
-}
+    catNo.style.transform=`scale(${noSize})`;
+
+
+
+    yesSize+=0.2;
+
+
+    catYes.style.transform=`scale(${yesSize})`;
+
+
+
+    catNo.style.position="absolute";
+
+    catNo.style.left=Math.random()*80+"%";
+
+    catNo.style.top=Math.random()*80+"%";
+
+
+});
