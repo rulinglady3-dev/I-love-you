@@ -1,0 +1,153 @@
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+
+    margin: 0;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+
+    background-image: url("IMG_5313.webp");
+    background-size: cover;
+    background-position: center;
+
+    font-family: "Georgia", serif;
+
+}
+
+
+
+.container {
+
+    text-align: center;
+
+    color: white;
+
+}
+
+
+
+.envelope {
+
+    width: 230px;
+
+    cursor: pointer;
+
+    transition: transform .4s ease;
+
+}
+
+
+
+.envelope:hover {
+
+    transform: scale(1.05);
+
+}
+
+
+
+.sorry-text {
+
+    font-size: 28px;
+
+    margin-top: 20px;
+
+    color: white;
+
+}
+
+
+
+.letter {
+
+    background: #fff8e7;
+
+    color: #333;
+
+    width: 300px;
+
+    padding: 30px;
+
+    border-radius: 15px;
+
+    cursor: pointer;
+
+    font-size: 22px;
+
+    animation: appear .8s ease;
+
+}
+
+
+
+.letter span {
+
+    display: block;
+
+    margin-top: 20px;
+
+    font-size: 18px;
+
+    color: #777;
+
+}
+
+
+
+.gifs img {
+
+    width: 300px;
+
+    max-width: 80vw;
+
+    border-radius: 20px;
+
+}
+
+
+
+.miss {
+
+    margin-top: 25px;
+
+    font-size: 35px;
+
+}
+
+
+
+.hidden {
+
+    display: none;
+
+}
+
+
+
+@keyframes appear {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(20px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
