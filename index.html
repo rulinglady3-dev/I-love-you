@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>I'm sorry ❤️</title>
+<title>I'm Sorry ❤️</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -13,122 +13,89 @@
 
 <body>
 
+<!-- Başlangıç -->
+<div id="startScreen" class="screen">
 
-<div class="container">
+    <img id="envelope" src="envelope.png" alt="Envelope">
 
-
-    <!-- Başlangıç -->
-
-    <div id="start">
-
-        <img src="envelope.png" id="envelope">
-
-        <p id="sorry">
-            I'm sorry...
-        </p>
-
-    </div>
-
-
-
-    <!-- Mektup -->
-
-    <div id="letter" class="hidden">
-
-        <div class="paper">
-
-            <p>
-                I'm sorry if I hurt you lately. ❤️
-            </p>
-
-            <span>
-                (click)
-            </span>
-
-        </div>
-
-    </div>
-
-
-
-    <!-- GIF bölümü -->
-
-    <div id="gifBox" class="hidden">
-
-        <img id="gif">
-
-    </div>
-
-
-
-    <!-- I miss you -->
-
-    <h1 id="miss" class="hidden">
-        I miss you. ❤️
-    </h1>
-
-
-
-
-    <!-- Barışma -->
-
-    <div id="okayBox" class="hidden">
-
-        <h1>
-            Can we be okay again? ❤️
-        </h1>
-
-
-        <button class="moving yes1">
-            Yes ❤️
-        </button>
-
-
-        <button class="moving yes2">
-            Of course yes ❤️
-        </button>
-
-
-        <button class="moving yes3">
-            Definitely yes ❤️
-        </button>
-
-
-    </div>
-
-
-
-
-
-    <!-- Kedi bölümü -->
-
-    <div id="catBox" class="hidden">
-
-        <h1>
-            Can I be your cat? 🐱❤️
-        </h1>
-
-
-        <button id="catYes">
-            Yes ❤️
-        </button>
-
-
-        <button id="catNo">
-            No 💔
-        </button>
-
-
-    </div>
-
-
+    <p id="startText">I'm sorry...</p>
 
 </div>
 
 
+<!-- Mektup -->
+<div id="letterScreen" class="screen hidden">
+
+    <div id="letter">
+
+        <p id="letterText">
+            I'm sorry if I hurt you lately. ❤️
+        </p>
+
+        <span id="clickText">(click)</span>
+
+    </div>
+
+</div>
+
+
+<!-- GIF -->
+<div id="gifScreen" class="screen hidden">
+
+    <img id="gifImage" src="" alt="GIF">
+
+</div>
+
+
+<!-- I miss you -->
+<div id="missScreen" class="screen hidden">
+
+    <h1>I miss you. ❤️</h1>
+
+</div>
+
+
+<!-- Can we be okay -->
+<div id="okayScreen" class="screen hidden">
+
+    <h1>Can we be okay again? ❤️</h1>
+
+    <button class="movingBtn yesA">
+        Yes ❤️
+    </button>
+
+    <button class="movingBtn yesB">
+        Of course yes ❤️
+    </button>
+
+    <button class="movingBtn yesC">
+        Definitely yes ❤️
+    </button>
+
+</div>
+
+
+<!-- Cat -->
+<div id="catScreen" class="screen hidden">
+
+    <h1>Can I be your cat? 🐱❤️</h1>
+
+    <button id="catYes">
+        Yes ❤️
+    </button>
+
+    <button id="catNo">
+        No 💔
+    </button>
+
+</div>
+
+
+<!-- Konfeti -->
+<canvas id="confettiCanvas"></canvas>
+
 
 <script src="script.js"></script>
-
 
 </body>
 
