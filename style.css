@@ -1,43 +1,37 @@
 *{
+    margin:0;
+    padding:0;
     box-sizing:border-box;
 }
 
-
 body{
 
-    margin:0;
-
+    width:100vw;
     height:100vh;
 
+    overflow:hidden;
+
+    font-family:Georgia,serif;
+
+    background:url("IMG_5313.webp") center center/cover no-repeat;
+
+}
+
+.screen{
+
+    position:absolute;
+
+    inset:0;
+
     display:flex;
+
+    flex-direction:column;
 
     justify-content:center;
 
     align-items:center;
 
-    overflow:hidden;
-
-    background-image:url("IMG_5313.webp");
-
-    background-size:cover;
-
-    background-position:center;
-
-    font-family:Georgia, serif;
-
 }
-
-
-
-.container{
-
-    text-align:center;
-
-    color:white;
-
-}
-
-
 
 .hidden{
 
@@ -47,20 +41,178 @@ body{
 
 
 
-/* Zarf */
+/* ---------- Zarf ---------- */
 
 #envelope{
 
-    width:230px;
+    width:240px;
 
     cursor:pointer;
 
-    transition:.4s;
+    transition:.5s;
+
+}
+
+#envelope:hover{
+
+    transform:scale(1.05);
+
+}
+
+#startText{
+
+    margin-top:20px;
+
+    color:white;
+
+    font-size:30px;
+
+    text-shadow:0 0 10px black;
 
 }
 
 
-#envelope:hover{
+
+/* ---------- Kağıt ---------- */
+
+#letterScreen{
+
+    position:absolute;
+
+}
+
+#letter{
+
+    width:220px;
+
+    min-height:150px;
+
+    background:#fff9e9;
+
+    border-radius:12px;
+
+    padding:20px;
+
+    color:#333;
+
+    text-align:center;
+
+    cursor:pointer;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.3);
+
+    animation:paperUp .8s ease;
+
+}
+
+#letterText{
+
+    font-size:18px;
+
+    line-height:1.5;
+
+}
+
+#clickText{
+
+    display:block;
+
+    margin-top:18px;
+
+    color:#888;
+
+    font-size:15px;
+
+}
+
+
+
+/* ---------- GIF ---------- */
+
+#gifImage{
+
+    width:320px;
+
+    max-width:85vw;
+
+    border-radius:18px;
+
+}
+
+
+
+/* ---------- Yazılar ---------- */
+
+h1{
+
+    color:white;
+
+    text-shadow:0 0 10px black;
+
+    text-align:center;
+
+}
+
+
+
+/* ---------- Animasyon ---------- */
+
+@keyframes paperUp{
+
+    from{
+
+        transform:translateY(120px);
+
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:translateY(0);
+
+        opacity:1;
+
+    }
+
+}
+/* ---------- Can we be okay ---------- */
+
+#okayScreen h1{
+
+    margin-bottom:60px;
+
+    font-size:34px;
+
+}
+
+
+
+.movingBtn{
+
+    position:absolute;
+
+    padding:14px 28px;
+
+    border:none;
+
+    border-radius:40px;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    background:#ff5f91;
+
+    color:white;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.25);
+
+    transition:transform .25s;
+
+}
+
+.movingBtn:hover{
 
     transform:scale(1.08);
 
@@ -68,121 +220,11 @@ body{
 
 
 
-#sorry{
+/* ---------- Cat ---------- */
 
-    font-size:30px;
+#catScreen h1{
 
-}
-
-
-
-/* Mektup */
-
-.paper{
-
-    background:#fff8e7;
-
-    color:#333;
-
-    width:320px;
-
-    padding:35px;
-
-    border-radius:15px;
-
-    font-size:22px;
-
-    cursor:pointer;
-
-    animation:show .8s;
-
-}
-
-
-
-.paper span{
-
-    display:block;
-
-    margin-top:20px;
-
-    font-size:18px;
-
-}
-
-
-
-/* Gif */
-
-#gif{
-
-    width:300px;
-
-    max-width:80vw;
-
-    border-radius:20px;
-
-}
-
-
-
-/* Yazılar */
-
-h1{
-
-    animation:show 1s;
-
-}
-
-
-
-/* Hareketli butonlar */
-
-.moving{
-
-    position:absolute;
-
-    padding:15px 25px;
-
-    border:none;
-
-    border-radius:30px;
-
-    font-size:18px;
-
-    cursor:pointer;
-
-    background:#ff5c8a;
-
-    color:white;
-
-}
-
-
-
-.yes1{
-
-    left:30%;
-
-    top:60%;
-
-}
-
-
-.yes2{
-
-    left:55%;
-
-    top:40%;
-
-}
-
-
-.yes3{
-
-    left:40%;
-
-    top:75%;
+    margin-bottom:45px;
 
 }
 
@@ -191,17 +233,19 @@ h1{
 #catYes,
 #catNo{
 
-    padding:15px 35px;
+    padding:16px 34px;
+
+    margin:15px;
 
     border:none;
 
-    border-radius:30px;
-
-    font-size:22px;
-
-    margin:20px;
+    border-radius:35px;
 
     cursor:pointer;
+
+    font-size:20px;
+
+    transition:.3s;
 
 }
 
@@ -209,7 +253,7 @@ h1{
 
 #catYes{
 
-    background:#ff5c8a;
+    background:#ff5f91;
 
     color:white;
 
@@ -219,7 +263,7 @@ h1{
 
 #catNo{
 
-    background:#555;
+    background:#666;
 
     color:white;
 
@@ -227,23 +271,16 @@ h1{
 
 
 
-@keyframes show{
+/* ---------- Konfeti ---------- */
 
-    from{
+#confettiCanvas{
 
-        opacity:0;
+    position:fixed;
 
-        transform:translateY(20px);
+    inset:0;
 
-    }
+    pointer-events:none;
 
-
-    to{
-
-        opacity:1;
-
-        transform:translateY(0);
-
-    }
+    z-index:9999;
 
 }
